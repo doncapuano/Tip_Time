@@ -15,11 +15,11 @@
             android:id="@+id/icon_cost_of_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
             app:layout_constraintBottom_toBottomOf="@id/cost_of_service"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/cost_of_service"
-            app:srcCompat="@drawable/ic_store"
-            android:importantForAccessibility="no" />
+            app:srcCompat="@drawable/ic_store" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/cost_of_service"
@@ -42,11 +42,11 @@
             android:id="@+id/icon_service_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
             app:layout_constraintBottom_toBottomOf="@id/service_question"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/service_question"
-            app:srcCompat="@drawable/ic_service"
-            android:importantForAccessibility="no" />
+            app:srcCompat="@drawable/ic_service" />
 
         <TextView
             android:id="@+id/service_question"
@@ -91,22 +91,42 @@
             android:id="@+id/icon_round_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
             app:layout_constraintBottom_toBottomOf="@id/round_up_switch"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/round_up_switch"
-            app:srcCompat="@drawable/ic_round_up"
-            android:importantForAccessibility="no" />
+            app:srcCompat="@drawable/ic_round_up" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/round_up_switch"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:checked="true"
             android:text="@string/round_up_tip"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/icon_round_up"
             app:layout_constraintTop_toBottomOf="@id/tip_options"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <ImageView
+            android:id="@+id/icon_round_up_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/round_up_total_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/round_up_total_switch"
+            app:srcCompat="@drawable/ic_round_up" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/round_up_total_switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/round_up_total"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_round_up_total"
+            app:layout_constraintTop_toBottomOf="@id/round_up_switch"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Button
@@ -116,8 +136,8 @@
             android:layout_marginTop="8dp"
             android:text="@string/calculate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/round_up_switch"
-            app:layout_constraintTop_toBottomOf="@id/round_up_switch" />
+            app:layout_constraintStart_toStartOf="@id/round_up_total_switch"
+            app:layout_constraintTop_toBottomOf="@id/round_up_total_switch" />
 
         <TextView
             android:id="@+id/tip_result"
@@ -128,6 +148,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/calculate_button"
             tools:text="Tip Amount= $10" />
+
+        <TextView
+            android:id="@+id/total_result"
+            style="@style/Widget.TipTime.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tip_result"
+            tools:text="Total Amount= $10" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
