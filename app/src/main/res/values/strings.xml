@@ -10,5 +10,6 @@
     <string name="tip_amount">Tip Amount: %s</string>
     <string name="total_amount">Total Amount: %s</string>
     <string name="round_up_total">Round up total?</string>
+    <string name="no_tip">No Tip</string>
 
 </resources>
